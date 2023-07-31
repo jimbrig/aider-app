@@ -6,11 +6,24 @@ def create_app():
 
     @app.route('/ping')
     def ping():
-        return 'success', 200
+        return {
+            'message': 'pong',
+            'status': 200
+        }
 
-    @app.route('/healthcheck')
+    @app.route('/health')
     def healthcheck():
-        return 'healthy', 200
+        return {
+            'message': 'healthy',
+            'status': 200
+        }
+
+    @app.route('/version')
+    def version():
+        return {
+            'version': '0.0.1',
+            'status': 200
+        }
 
     return app
 
