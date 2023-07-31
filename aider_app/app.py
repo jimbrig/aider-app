@@ -8,6 +8,10 @@ def create_app():
     def ping():
         return 'success', 200
 
+    @app.route('/healthcheck')
+    def healthcheck():
+        return 'healthy', 200
+
     return app
 
 if __name__ == '__main__':
