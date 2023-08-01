@@ -1,0 +1,19 @@
+{
+    "name": "aider_app",
+    "version": "0.1.0",
+    "description": "Template project - Flask Boilerplate Code",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/jimbrig/aider-app"
+    },
+    "bugs": {
+        "url": "https://github.com/jimbrig/aider-app/issues",
+        "email": "jimmy.briggs@jimbrig.com"
+    },
+    "author": "Jimmy Briggs",
+    "engines": {
+        "node": ">=10.0.0"
+    },
+    "dependencies": {},
+    "devDependencies": {}
+}

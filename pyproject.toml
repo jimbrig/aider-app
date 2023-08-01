@@ -1,0 +1,38 @@
+[tool.poetry]
+name = "aider-app"
+version = "0.1.0"
+description = ""
+authors = ["Jimmy Briggs <jimmy.briggs@jimbrig.com>"]
+readme = "README.md"
+packages = [{include = "aider_app"}]
+
+[tool.poetry.dependencies]
+python = ">=3.11,<3.12"
+flask = "^2.3.2"
+flask-jwt-extended = "^4.5.2"
+flask-sqlalchemy = "^3.0.5"
+sqlalchemy = "^2.0.19"
+datetime = "^5.2"
+flask-migrate = "^4.0.4"
+flask-bcrypt = "^1.0.1"
+flask-login = "^0.6.2"
+flask-debugtoolbar = "^0.13.1"
+flask-csrf = "^0.9.2"
+flask-wtf = "^1.1.1"
+flask-cors = "^4.0.0"
+flask-cache = "^0.13.1"
+flask-admin = "^1.6.1"
+flask-dance = "^7.0.0"
+flask-minify = "^0.42"
+
+
+[tool.poetry.group.dev.dependencies]
+aider-chat = "^0.10.1"
+
+
+[tool.poetry.group.docs.dependencies]
+mkdocs = "^1.5.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
