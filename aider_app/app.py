@@ -1,32 +1,22 @@
 from flask import Flask
 
+from aider_app.blueprints.auth.oauth import github_blueprint
 
-def create_app():
+from .config import config
+from .extensions import db
+from .utils.base_endpoints import init_app_endpoints
+from .utils.initializers import *
+
+
+def create_app(cfg):
+
     app = Flask(__name__)
 
-    @app.route('/ping')
-    def ping():
-        return {
-            'message': 'pong',
-            'status': 200
-        }
+    app.config.from_object(cfg)
 
-    @app.route('/health')
-    def healthcheck():
-        return {
-            'message': 'healthy',
-            'status': 200
-        }
-
-    @app.route('/version')
-    def version():
-        return {
-            'version': '0.0.1',
-            'status': 200
-        }
-
+    register_extensions(app)
+    register_blueprints(app)
+    app.register_blueprint(github_blueprint, url_prefix='/auth/login')
+    configure_db(app)
+    init_app_endpoints(app)
     return app
-
-if __name__ == '__main__':
-    app = create_app()
-    app.run()
